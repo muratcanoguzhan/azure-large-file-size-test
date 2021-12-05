@@ -1,7 +1,6 @@
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Specialized;
 using Microsoft.AspNetCore.Mvc;
-using System.IO;
 using System.Text;
 
 namespace blob.api.Controllers
@@ -10,12 +9,10 @@ namespace blob.api.Controllers
     [Route("[controller]")]
     public class PokemonController : ControllerBase
     {
-        private readonly ILogger<PokemonController> _logger;
         private readonly IWebHostEnvironment _env;
 
-        public PokemonController(ILogger<PokemonController> logger, IWebHostEnvironment env)
+        public PokemonController(IWebHostEnvironment env)
         {
-            _logger = logger;
             _env = env;
         }
 
